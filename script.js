@@ -158,47 +158,25 @@ const students = [
   
 //   document.querySelector(".alumni-container").innerHTML = printStudentToDOM("Sydney wait", "coding", "good at stuff", 100)
 
+
+
 // Practice: Student Components
 // Create a new project sub-directory in your workspace/javascript directory.
 // Paste the array of student objects above into your JavaScript file.
 // Copy the createStudentComponent function into your code.
+const createStudentComponent = (name, subject, info) => {
+    return `
+        <div class="student">
+            <h1>${name}</h1>
+            <section>${subject}</section>
+            <aside>${info}</aside>
+        </div>
+    `
+}
 // Add the following styles to your CSS.
-#container {
-    display: flex;
-    flex-direction: column;
-}
-
-.pushRight {
-    margin-left: auto;
-}
-
-.xx-large {
-    font-size: 3em;
-}
-
-.bordered {
-    border-width: 1px;
-    border-color: goldenrod;
-    border-style: solid;
-}
-
-.dashed {
-    border-style: dashed;
-}
-
-.section--padded {
-    padding: 10px;
-}
-
-.passing {
-    color: green;
-}
-
-.failing {
-    color: orange;
-}
+//done
 // Add a container article to your HTML.
-<article id="container"></article>
+// <article id="container"></article> */
 // Iterate the array of students, and apply the correct style to the h1 depending on the score of the student being below 60, or above it.
 for (let i = 0; i < students.length; i++) {
     let studentComponent = ""
@@ -210,27 +188,17 @@ for (let i = 0; i < students.length; i++) {
 }
 // If a student is passing, then the structure should look like the following.
 
-<div class="student">
-    <h1 class="xx-large passing">Student Name</h1>
-    <section class="bordered dashed section--padded">Subject</section>
-    <aside class="pushRight">Additional information</aside>
-</div>
+// <div class="student">
+//     <h1 class="xx-large passing">Student Name</h1>
+//     <section class="bordered dashed section--padded">Subject</section>
+//     <aside class="pushRight">Additional information</aside>
+// </div> //
+
+
 
 // Practice: One Object to Rule Them All
 // Instead of defining four arguments for the createStudentComponent function, and then passing the individual properties when it is invoked, refactor the function to accept the entire object as a single argument.
 
-// for (let i = 0; i < students.length; i++) {
-//     let htmlString = printStudentObjectsToDom(
-//       students[i].name,
-//       students[i].subject,
-//       students[i].info,
-//       students[i].score
-//     );
-//     console.log(htmlString);
-//     document.querySelector(".student-container").innerHTML += htmlString;
-//   }
-
-//  let i = 0;
 function printStudentObjectsToDom(studentsObject) {
     console.log(studentsObject)
     return `
@@ -265,5 +233,5 @@ for (let i = 0; i < students.length; i++) {
 
 // Then refactor your string interpolation code to use the object properties.
 
-// Challenges are optional exercises that you should only attempt if you have completed the practice exercises, and fully understand the concepts used in them.
+
 
