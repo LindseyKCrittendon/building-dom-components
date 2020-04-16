@@ -164,28 +164,44 @@ const students = [
 // Create a new project sub-directory in your workspace/javascript directory.
 // Paste the array of student objects above into your JavaScript file.
 // Copy the createStudentComponent function into your code.
-const createStudentComponent = (name, subject, info) => {
+const createStudentComponent = (name, subject, info, score) => {
     return `
         <div class="student">
             <h1>${name}</h1>
             <section>${subject}</section>
             <aside>${info}</aside>
+            <section>${score}</section>
         </div>
     `
+}
+const studentContainer = document.querySelector("#container")
+
+for (let i = 0; i < students.length; i++) {
+   const student = students[i]
+   studentContainer.innerHTML += createStudentComponent(
+       student.name,
+       student.subject,
+       student.info,
+       student.score
+   )
 }
 // Add the following styles to your CSS.
 //done
 // Add a container article to your HTML.
-// <article id="container"></article> */
+// <article id="container"></article> */ done
+
+
 // Iterate the array of students, and apply the correct style to the h1 depending on the score of the student being below 60, or above it.
-for (let i = 0; i < students.length; i++) {
-    let studentComponent = ""
+const studentDivs = document.querySelectorAll(".student")
+for (let i = 0; i < studentDivs.length; i++) {
+    let studentComponent = "#container"
     if (students[i].score >= 60) {
-        studentComponent = ...
-    } else {
-        studentComponent = ...
-    }
+        studentDivs[i].classList.add("passing")    } else {
+       studentDivs[i].classList.add("failing")
+       }
+       console.log(studentComponent)
 }
+
 // If a student is passing, then the structure should look like the following.
 
 // <div class="student">
