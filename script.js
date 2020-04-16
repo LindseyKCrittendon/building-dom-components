@@ -124,37 +124,146 @@ const students = [
 // }
 
 // Maker function
-function printStudentToDOM(studentName, subject, info, score) {
-    return `
-          <article>
-              <h3>${studentName}</h3>
-              <p>${subject}</p>
-              <p>${info}</p>
-              <p>${score}</p>
-              <p>Languages: HTML, CSS, JavaScript</p>
-          </article>`;
-  }
+// function printStudentToDOM(studentName, subject, info, score) {
+//     return `
+//           <article>
+//               <h3>${studentName}</h3>
+//               <p>${subject}</p>
+//               <p>${info}</p>
+//               <p>${score}</p>
+//               <p>Languages: HTML, CSS, JavaScript</p>
+//           </article>`;
+//   }
   
-  const printStudentToDOM = (name, subject, info) => {
+//   const printStudentToDOM = (name, subject, info) => {
       // body of function
-  }
+//   }
   
   
-  for (let i = 0; i < students.length; i++) {
-    let htmlString = printStudentToDOM(
-      students[i].name,
-      students[i].subject,
-      students[i].info,
-      students[i].score
-    );
-    console.log(htmlString);
-    document.querySelector(".student-container").innerHTML += htmlString;
-  }
+//   for (let i = 0; i < students.length; i++) {
+//     let htmlString = printStudentToDOM(
+//       students[i].name,
+//       students[i].subject,
+//       students[i].info,
+//       students[i].score
+//     );
+//     console.log(htmlString);
+//     document.querySelector(".student-container").innerHTML += htmlString;
+//   }
   
   // printStudentToDOM("Austin", "His mom is really cool");
   // printStudentToDOM("Mike", "hooray for orby");
   // printStudentToDOM("Ashon", "learned a cool HTML shortcut");
   
   
-  document.querySelector(".alumni-container").innerHTML = printStudentToDOM("Sydney wait", "coding", "good at stuff", 100)
+//   document.querySelector(".alumni-container").innerHTML = printStudentToDOM("Sydney wait", "coding", "good at stuff", 100)
+
+// Practice: Student Components
+// Create a new project sub-directory in your workspace/javascript directory.
+// Paste the array of student objects above into your JavaScript file.
+// Copy the createStudentComponent function into your code.
+// Add the following styles to your CSS.
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+.pushRight {
+    margin-left: auto;
+}
+
+.xx-large {
+    font-size: 3em;
+}
+
+.bordered {
+    border-width: 1px;
+    border-color: goldenrod;
+    border-style: solid;
+}
+
+.dashed {
+    border-style: dashed;
+}
+
+.section--padded {
+    padding: 10px;
+}
+
+.passing {
+    color: green;
+}
+
+.failing {
+    color: orange;
+}
+// Add a container article to your HTML.
+<article id="container"></article>
+// Iterate the array of students, and apply the correct style to the h1 depending on the score of the student being below 60, or above it.
+for (let i = 0; i < students.length; i++) {
+    let studentComponent = ""
+    if (students[i].score >= 60) {
+        studentComponent = ...
+    } else {
+        studentComponent = ...
+    }
+}
+// If a student is passing, then the structure should look like the following.
+
+<div class="student">
+    <h1 class="xx-large passing">Student Name</h1>
+    <section class="bordered dashed section--padded">Subject</section>
+    <aside class="pushRight">Additional information</aside>
+</div>
+
+// Practice: One Object to Rule Them All
+// Instead of defining four arguments for the createStudentComponent function, and then passing the individual properties when it is invoked, refactor the function to accept the entire object as a single argument.
+
+// for (let i = 0; i < students.length; i++) {
+//     let htmlString = printStudentObjectsToDom(
+//       students[i].name,
+//       students[i].subject,
+//       students[i].info,
+//       students[i].score
+//     );
+//     console.log(htmlString);
+//     document.querySelector(".student-container").innerHTML += htmlString;
+//   }
+
+//  let i = 0;
+function printStudentObjectsToDom(studentsObject) {
+    console.log(studentsObject)
+    return `
+          <article>
+              <h3>${studentsObject.name}</h3>
+              <p>${studentsObject.subject}</p>
+              <p>${studentsObject.info}</p>
+              <p>${studentsObject.score}</p>
+              <p>Languages: HTML, CSS, JavaScript</p>
+          </article>`;
+          
+}
+ 
+for (let i = 0; i < students.length; i++) {
+    let htmlString = printStudentObjectsToDom(
+      students[i]);
+    console.log(htmlString)
+    document.querySelector(".student-container").innerHTML += htmlString;
+  }
+//   document.querySelector(".student-container").innerHTML += htmlString; won't work out here, because it does not have a global scope.
+
+//   for (let i = 0; i < students.length; i++) {
+//         let htmlString = printStudentObjectsToDom(
+//           students[i].name,
+//           students[i].subject,
+//           students[i].info,
+//           students[i].score
+//         );
+//         console.log(htmlString);
+//         document.querySelector(".student-container").innerHTML += htmlString;
+//       } this is doing too much ya dummy.  It's doing the same work twice.
+
+// Then refactor your string interpolation code to use the object properties.
+
+// Challenges are optional exercises that you should only attempt if you have completed the practice exercises, and fully understand the concepts used in them.
 

@@ -2,9 +2,3 @@
     background-color: lightcoral;
 } 
 
-/* Practice: One Object to Rule Them All
-Instead of defining four arguments for the createStudentComponent function, and then passing the individual properties when it is invoked, refactor the function to accept the entire object as a single argument.
-
-Then refactor your string interpolation code to use the object properties.
-
-Challenges are optional exercises that you should only attempt if you have completed the practice exercises, and fully understand the concepts used in them. */
